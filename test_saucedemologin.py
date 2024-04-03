@@ -13,6 +13,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 class TestTestsaucedemologin():
   def setup_method(self, method):
     self.driver = webdriver.Chrome()
+    self.driver.maximize_window()
     self.vars = {}
   
   def teardown_method(self, method):
@@ -20,7 +21,6 @@ class TestTestsaucedemologin():
   
   def test_testsaucedemologin(self):
     self.driver.get("https://www.saucedemo.com/")
-    self.driver.set_window_size(978, 1032)
     self.driver.find_element(By.ID, "user-name").click()
     self.driver.find_element(By.ID, "user-name").send_keys("standard_user")
     self.driver.find_element(By.ID, "password").click()
